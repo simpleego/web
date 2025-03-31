@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" type="text/css" href="css/cmmon.css">
+  <style>
+    table , th, td {
+     border: 1px solid #ccc;
+     padding: 3px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>사용자 정보 출력(변수)</h1>
+  이름: <span th:text="${name}"></span></br>
+  나이 : <span th:text="${age}"></span></br>
+
+  <h2> 사용자 객체 정보 출력(객체) </h2>
+  사용자 이름 : <span th:text="${user.name}"></span></br>
+  사용자 이메일 : <span th:text="${user.email}"></span></br>
+
+  <!--  태그 밖에서 값을 출력 -->
+  사용자 아이디 <span>[[${user.email}]]</span></br>
+
+  <h2>사용자 정보 출력(컬렉션)</h2>
+    <table>
+      <tr>
+        <th>아이디</th>
+        <th>이름</th>
+        <th>비번</th>
+        <th>이메일</th>
+      </tr>
+      <tr th:each="user : ${userList}">
+        <td th:text="${user.userId}"></td>
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.password}"></td>
+        <td th:text="${user.email}"></td>
+      </tr>
+    </table>
+</div>
+</body>
+</html>

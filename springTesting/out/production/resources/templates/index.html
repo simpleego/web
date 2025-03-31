@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:with="name='피우'">
+    <h4 th:text="${name}"></h4>
+
+    <p>Hello simple test</p>
+    <a href="/age/123">Age transfer</a></br>
+    <a href="/name/simple/age/123">Name,Age transfer</a></br>
+    <a th:href="@{/age/{age}(age = 23)}">나이 보내기</a></br>
+    <a th:href="@{/name/simple/age/23}">이름, 나이 보내기</a></br>
+    <p th:with="data=simple">simple</p></br>
+    <!--    <a th:href="@{/test/{age}(age = 123)}">나이/이름 보내기</a>-->
+    <a th:href="@{/name/{name}(name=${name})}">나이(파라미터 변수로 설정)보내기</a></br>
+<!--    @{/hello/{param1}/{param2}(param1=${param1}, param2=${param2})}-->
+    <a th:href="@{/test}">test 변수 설정</a></br>
+    <p>[[${name}]]</p>
+
+    <a href="/user/info">사용자 정보 출력</a>
+</div>
+</body>
+</html>

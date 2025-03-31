@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>with 가져오기</title>
+</head>
+<body>
+<h1>with 설명</h1>
+
+<h3 style="color: blue">Stage 01</h3>
+<th:block th:with="test='몰랑피우'">
+
+  <p th:text="${test}"></p>
+</th:block>
+<p th:text="${test}"></p>
+
+<h3 style="color: blue">Stage 02</h3>
+<div th:with="mollang='피우'">
+  <h4 th:text="${mollang}"></h4>
+</div>
+
+<h3 style="color: blue">Stage 03</h3>
+<div th:with="ref01='몰랑', ref02='피우', ref03=10">
+  <h4 th:text="${ref01}"></h4>
+  <h4 th:text="${ref02}"></h4>
+  <h4 th:text="${ref03}"></h4>
+</div>
+</body>
+</html>
